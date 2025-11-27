@@ -1,3 +1,12 @@
+"""
+TODO
+- Create a "possibility grid" from the raw data, which is a list of lists
+- Keep iterating through the possibility grid until it doesn't change
+- Now we're as far as we can get without guessing
+"""
+
+import indices
+
 input = [0, 0, 8,   0, 0, 0,   0, 0, 0,
          4, 0, 0,   6, 0, 0,   0, 0, 9,
          5, 0, 0,   4, 1, 0,   0, 3, 0,
@@ -30,7 +39,7 @@ def get_digits_in_column(input, i):
 def big_union(list_of_lists):
     return []
 
-
+ 
 def one_minus(digit_list):
     return []
 
@@ -45,7 +54,6 @@ def get_possible_digits(input, i):
 
 
 def get_all_possible_digits(input):
-    map_of_possible_digits = []
     for i in range(len(input)):
         possible_digits = get_possible_digits(input, i)
         if len(possible_digits) == 0:
@@ -53,9 +61,8 @@ def get_all_possible_digits(input):
         elif len(possible_digits) == 1:
             input[i] = possible_digits[0]
         else:
-            map_of_possible_digits = possible_digits
-    if map_of_possible_digits:
-        get_all_possible_digits()
+            pass    # TODO: handle this
 
 
-get_all_possible_digits(input)
+if __name__ == "__main__":
+    get_all_possible_digits(input)
